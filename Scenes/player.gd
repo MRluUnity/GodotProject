@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var spped : float = 300
 var player_animation
 var player_sprite
+var can_move : bool = true
 
 func _ready() -> void:
 	# 我用它来进行初始化
@@ -11,16 +12,17 @@ func _ready() -> void:
 	animation_switch("idle")
 
 func _physics_process(delta) -> void:
-	var movement_vector_normalized: Vector2 = get_movement_vector_normalized()
+	if can_move:
+		var movement_vector_normalized: Vector2 = get_movement_vector_normalized()
 	
-	velocity = movement_vector_normalized * spped
-	
-	if velocity != Vector2.ZERO:
-		set_scale_inverse()
-		animation_switch("run")
-		move_and_slide()
-	else:
-		animation_switch("idle")
+		velocity = movement_vector_normalized * spped
+		
+		if velocity != Vector2.ZERO:
+			set_scale_inverse()
+			animation_switch("run")
+			move_and_slide()
+		else:
+			animation_switch("idle")
 
 func get_movement_vector_normalized() -> Vector2:
 	var x_movement : float = Input.get_action_strength("action_right") - Input.get_action_strength("action_left")
@@ -41,3 +43,7 @@ func set_scale_inverse() -> void:
 	elif get_movement_vector_normalized().x < 0:
 		# scale.x = -1
 		player_sprite.flip_h = true
+
+
+func _on_control_line_eidt_is_show(is_show) -> void:
+	can_move = !is_show

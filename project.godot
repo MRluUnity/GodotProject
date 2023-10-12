@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="英语小游戏"
-run/main_scene="res://Scenes/player.tscn"
+run/main_scene="res://test/main_test.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 

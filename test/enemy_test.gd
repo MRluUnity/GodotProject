@@ -1,8 +1,9 @@
-extends Node2D
+extends Area2D
 
 @export var health : float = 100
 var current_health : float = 0
 signal dead
+signal player_dialog
 
 func _ready():
 	current_health = health
@@ -23,3 +24,14 @@ func heal(heal : float):
 		current_health = health
 	else:
 		current_health += heal
+
+func _on_body_entered(body):
+	# 当物体进入触发器时触发此函数
+	if body.is_in_group("player"):
+		player_dialog.emit()
+		print("Player进入了触发器,发送信号")
+
+func _on_body_exited(body):
+	# 当物体离开触发器时触发此函数
+	if body.is_in_group("player"):
+		print("Player离开了触发器")

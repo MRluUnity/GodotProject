@@ -4,7 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://diou47q2x88yc" path="res://arts/B_witch_idle.png" id="1_qtse5"]
 [ext_resource type="Texture2D" uid="uid://cmwdd18kco6f3" path="res://arts/B_witch_run.png" id="2_7mq14"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_03pt3"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_j8rgh"]
+radius = 38.0132
 
 [sub_resource type="Animation" id="Animation_ht1wv"]
 length = 0.001
@@ -139,7 +140,6 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(48, 32)
 up_direction = Vector2(0, 1)
 script = ExtResource("1_o1vvo")
 metadata/_edit_group_ = true
@@ -151,7 +151,8 @@ texture = ExtResource("1_qtse5")
 vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_03pt3")
+position = Vector2(0, 111)
+shape = SubResource("CircleShape2D_j8rgh")
 debug_color = Color(0.980392, 0, 0.396078, 0.419608)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
