@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbext4nlbgtpu"]
+
+[ext_resource type="PackedScene" uid="uid://brm0n0do7bgx0" path="res://test/control_test.tscn" id="1_drten"]
+[ext_resource type="PackedScene" uid="uid://bov0x7w7w8ghw" path="res://test/enemy_test.tscn" id="2_8uyi8"]
+
+[node name="main" type="Node2D"]
+
+[node name="Control" parent="." instance=ExtResource("1_drten")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 568.0
+offset_top = 597.0
+offset_right = 568.0
+offset_bottom = 597.0
+size_flags_vertical = 4
+
+[node name="enemy" parent="." instance=ExtResource("2_8uyi8")]
+position = Vector2(567, 168)
+
+[connection signal="hit" from="Control" to="enemy" method="_hit"]
+[connection signal="dead" from="enemy" to="Control" method="_on_enemy_dead"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfy557a81qbo0"]
+
+[sub_resource type="GDScript" id="GDScript_walpr"]
+script/source = "extends Control
+
+var preset_text = \"attack\"
+var input_text = \"\"
+var enemy 
+
+func _ready():
+	enemy = get_tree().get_nodes_in_group(\"enemy\")
+
+func _process(delta):
+	input_text = get_node(\"LineEdit\").get_text()
+
+	# 比较 input_text 和 preset_text
+	if Input.is_action_just_pressed(\"ui_accept\"):
+		if input_text == preset_text:
+			print(\"The text matches!\")  
+			get_node(\"LineEdit\").clear()
+		else:
+			print(\"The text doesn't match!\")  
+			get_node(\"LineEdit\").clear()
+"
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_walpr")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -20.0
+offset_right = 150.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
