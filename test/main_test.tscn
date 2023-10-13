@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://brm0n0do7bgx0" path="res://test/control_test.tscn" id="1_drten"]
 [ext_resource type="PackedScene" uid="uid://bov0x7w7w8ghw" path="res://test/enemy_test.tscn" id="2_8uyi8"]
-[ext_resource type="PackedScene" path="res://Scenes/player_health_bar.tscn" id="2_eh23b"]
-[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="3_kf6vj"]
-[ext_resource type="PackedScene" path="res://Scenes/enemy_health_bar.tscn" id="4_7186c"]
+[ext_resource type="PackedScene" uid="uid://btuybav277gxg" path="res://scenes/player_health_bar.tscn" id="2_eh23b"]
+[ext_resource type="PackedScene" uid="uid://dod37ps8ek8p4" path="res://scenes/player.tscn" id="3_kf6vj"]
+[ext_resource type="PackedScene" uid="uid://bppu8l7vav1ii" path="res://scenes/enemy_health_bar.tscn" id="4_7186c"]
 
 [node name="main" type="Node2D"]
 
