@@ -36,12 +36,6 @@ func _hit(damage : float):
 		enemy_health_bar_switch.emit(current_health)
 		is_dead = true
 
-func heal(heal : float):
-	current_health += heal
-	enemy_health_bar_switch.emit(current_health)
-	if  current_health >= health:
-		current_health = health
-
 func animation_switch(_animation : String) -> void:
 	animation.play(_animation)
 	
@@ -68,3 +62,9 @@ func _on_body_exited(body):
 	# 当物体离开触发器时触发此函数
 	if body.is_in_group("player"):
 		pass
+
+func _on_control_heal(heal) -> void:
+	current_health += heal
+	enemy_health_bar_switch.emit(current_health)
+	if  current_health >= health:
+		current_health = health

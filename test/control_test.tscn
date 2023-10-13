@@ -10,7 +10,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_v7kjg")
-damage = 10.0
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 1

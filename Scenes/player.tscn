@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://dod37ps8ek8p4"]
 
-[ext_resource type="Script" path="res://Scenes/player.gd" id="1_o1vvo"]
-[ext_resource type="Texture2D" uid="uid://diou47q2x88yc" path="res://arts/player/B_witch_idle.png" id="2_yyjx7"]
-[ext_resource type="Texture2D" uid="uid://dcqbde1nu070m" path="res://arts/player/B_witch_attack.png" id="3_urcsy"]
-[ext_resource type="Texture2D" uid="uid://cmwdd18kco6f3" path="res://arts/player/B_witch_run.png" id="4_g2unp"]
+[ext_resource type="Script" path="res://scenes/player.gd" id="1_0cdtv"]
+[ext_resource type="Texture2D" uid="uid://diou47q2x88yc" path="res://arts/player/B_witch_idle.png" id="2_7c544"]
+[ext_resource type="Texture2D" uid="uid://dcqbde1nu070m" path="res://arts/player/B_witch_attack.png" id="3_4wfbq"]
+[ext_resource type="Texture2D" uid="uid://cmwdd18kco6f3" path="res://arts/player/B_witch_run.png" id="4_okabv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8rgh"]
 radius = 38.0132
@@ -32,7 +32,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_yyjx7")]
+"values": [ExtResource("2_7c544")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -97,7 +97,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("3_urcsy")]
+"values": [ExtResource("3_4wfbq")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -200,7 +200,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_yyjx7")]
+"values": [ExtResource("2_7c544")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -241,7 +241,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_g2unp")]
+"values": [ExtResource("4_okabv")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -293,13 +293,13 @@ radius = 35.0571
 
 [node name="Player" type="CharacterBody2D"]
 up_direction = Vector2(0, 1)
-script = ExtResource("1_o1vvo")
+script = ExtResource("1_0cdtv")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-5.96047e-07, 4.76837e-07)
 scale = Vector2(8, 8)
-texture = ExtResource("2_yyjx7")
+texture = ExtResource("2_7c544")
 vframes = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

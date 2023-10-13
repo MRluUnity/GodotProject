@@ -1,0 +1,16 @@
+{
+	"attack_text": {
+		"name": "attack",
+		"damage": 10,
+		"heal": 0,
+		"mana": 5,
+		"slow_time": 0
+	},
+	"heal_text": {
+		"name": "heal",
+		"damage": 0,
+		"heal": 0,
+		"mana": 5,
+		"slow_time": 0
+	}
+}
