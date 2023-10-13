@@ -3,8 +3,6 @@ extends Control
 @export var damage : float = 10
 @export var heal_damage : float = 10
 var text_json
-var attack_text = {"name" = "attack", "damage" = damage, "heal" = 0, "mana" = 5, "slow_time" = 0}
-var heal_text = {"name" = "heal", "damage" = 0, "heal" = heal_damage, "mana" = 5, "slow_time" = 0}
 var input_text = ""
 var xp : float = 0
 signal hit(damage : float)
@@ -12,8 +10,7 @@ signal line_eidt_is_show(is_show : bool)
 signal heal(damage : float)
 
 func _ready():
-	text_json = get_node("/root/json_file_load.gd")
-	print(text_json.get_config())
+	text_json = get_node("/root/StateDataLoader")
 	hide()
 	line_eidt_is_show.emit(false)
 
@@ -21,13 +18,13 @@ func _process(delta):
 	input_text = get_node("LineEdit").get_text()
 
 	if Input.is_action_just_pressed("action_accept"):
-		if input_text == attack_text["name"]:
+		if input_text == text_json.item_data.attack_text["name"]:
 			print("The text matches!")  
 			get_node("LineEdit").clear()
-			hit.emit(attack_text["damage"])
-		elif input_text == heal_text["name"]:
+			hit.emit(text_json.item_data.attack_text["damage"])
+		elif input_text == text_json.item_data.heal_text["name"]:
 			get_node("LineEdit").clear()
-			heal.emit(heal_text["heal"])
+			heal.emit(text_json.item_data.heal_text["heal"])
 		else:
 			print("The text doesn't match!")  
 			get_node("LineEdit").clear()

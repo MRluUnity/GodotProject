@@ -15,6 +15,10 @@ run/main_scene="res://test/main_test.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+StateDataLoader="*res://scripts/tool/state_data_loader.gd"
+
 [display]
 
 window/size/viewport_width=1080
