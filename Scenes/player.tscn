@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dod37ps8ek8p4"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_j0djb"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_52wnr"]
 [ext_resource type="Texture2D" uid="uid://diou47q2x88yc" path="res://arts/player/B_witch_idle.png" id="2_7c544"]
 [ext_resource type="Texture2D" uid="uid://dcqbde1nu070m" path="res://arts/player/B_witch_attack.png" id="3_4wfbq"]
 [ext_resource type="Texture2D" uid="uid://cmwdd18kco6f3" path="res://arts/player/B_witch_run.png" id="4_okabv"]
@@ -293,7 +293,7 @@ radius = 35.0571
 
 [node name="Player" type="CharacterBody2D"]
 up_direction = Vector2(0, 1)
-script = ExtResource("1_j0djb")
+script = ExtResource("1_52wnr")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

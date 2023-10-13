@@ -2,6 +2,7 @@ extends Control
 
 @export var damage : float = 10
 @export var heal_damage : float = 10
+var text_json
 var attack_text = {"name" = "attack", "damage" = damage, "heal" = 0, "mana" = 5, "slow_time" = 0}
 var heal_text = {"name" = "heal", "damage" = 0, "heal" = heal_damage, "mana" = 5, "slow_time" = 0}
 var input_text = ""
@@ -11,6 +12,8 @@ signal line_eidt_is_show(is_show : bool)
 signal heal(damage : float)
 
 func _ready():
+	text_json = get_node("/root/json_file_load.gd")
+	print(text_json.get_config())
 	hide()
 	line_eidt_is_show.emit(false)
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bov0x7w7w8ghw"]
 
-[ext_resource type="Script" path="res://scripts/enemy_test.gd" id="1_t5ic5"]
+[ext_resource type="Script" path="res://scripts/enemy/enemy_test.gd" id="1_bybte"]
 [ext_resource type="Texture2D" uid="uid://caaca4g655y8m" path="res://arts/enemy/idle.png" id="2_nv72a"]
 [ext_resource type="Texture2D" uid="uid://15pq0n3ynfbq" path="res://arts/enemy/run.png" id="3_8a3e1"]
 [ext_resource type="Texture2D" uid="uid://bqa72vitmdiey" path="res://arts/enemy/hit.png" id="4_7bwe3"]
@@ -279,7 +279,7 @@ _data = {
 
 [node name="enemy" type="Area2D"]
 scale = Vector2(10, 10)
-script = ExtResource("1_t5ic5")
+script = ExtResource("1_bybte")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_nv72a")
