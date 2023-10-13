@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbext4nlbgtpu"]
+[gd_scene load_steps=6 format=3 uid="uid://bbext4nlbgtpu"]
 
 [ext_resource type="PackedScene" uid="uid://brm0n0do7bgx0" path="res://test/control_test.tscn" id="1_drten"]
 [ext_resource type="PackedScene" uid="uid://bov0x7w7w8ghw" path="res://test/enemy_test.tscn" id="2_8uyi8"]
+[ext_resource type="PackedScene" uid="uid://btuybav277gxg" path="res://Scenes/player_health_bar.tscn" id="2_eh23b"]
 [ext_resource type="PackedScene" uid="uid://dod37ps8ek8p4" path="res://Scenes/player.tscn" id="3_kf6vj"]
+[ext_resource type="PackedScene" uid="uid://bppu8l7vav1ii" path="res://Scenes/enemy_health_bar.tscn" id="4_7186c"]
 
 [node name="main" type="Node2D"]
 
@@ -17,14 +19,34 @@ offset_top = 597.0
 offset_right = 568.0
 offset_bottom = 597.0
 size_flags_vertical = 4
+damage = 40.0
+
+[node name="Enemy_Health_Bar" parent="." instance=ExtResource("4_7186c")]
+anchors_preset = 10
+anchor_bottom = 0.0
+offset_left = 1080.0
+offset_right = 1080.0
+grow_vertical = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Player_Health_Bar" parent="." instance=ExtResource("2_eh23b")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="enemy" parent="." instance=ExtResource("2_8uyi8")]
-position = Vector2(567, 168)
+position = Vector2(800, 168)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("3_kf6vj")]
-position = Vector2(136, 298)
+position = Vector2(300, 160)
 
 [connection signal="hit" from="Control" to="enemy" method="_hit"]
+[connection signal="hit" from="Control" to="Player" method="_on_control_hit"]
 [connection signal="line_eidt_is_show" from="Control" to="Player" method="_on_control_line_eidt_is_show"]
 [connection signal="dead" from="enemy" to="Control" method="_on_enemy_dead"]
+[connection signal="dead" from="enemy" to="Enemy_Health_Bar" method="_on_enemy_dead"]
+[connection signal="enemy_health_bar_switch" from="enemy" to="Enemy_Health_Bar" method="_on_enemy_enemy_health_bar_switch"]
 [connection signal="player_dialog" from="enemy" to="Control" method="_on_enemy_player_dialog"]
+[connection signal="player_dialog" from="enemy" to="Enemy_Health_Bar" method="_on_enemy_player_dialog"]

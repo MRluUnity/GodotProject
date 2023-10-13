@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcqbde1nu070m"
-path="res://.godot/imported/B_witch_attack.png-8dfa6bece69ff9a25e1d61d2f3e5fcfd.ctex"
+uid="uid://caaca4g655y8m"
+path="res://.godot/imported/idle.png-43b8494659da5d03a530103e17ddcf84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/B_witch_attack.png"
-dest_files=["res://.godot/imported/B_witch_attack.png-8dfa6bece69ff9a25e1d61d2f3e5fcfd.ctex"]
+source_file="res://arts/enemy/idle.png"
+dest_files=["res://.godot/imported/idle.png-43b8494659da5d03a530103e17ddcf84.ctex"]
 
 [params]
 

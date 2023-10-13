@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg1ui7v7adi5p"
-path="res://.godot/imported/B_witch_take_damage.png-f5aafbcdc034115825a90c81a1d04ff5.ctex"
+uid="uid://78x2rx3xbirt"
+path="res://.godot/imported/transition to charge.png-4399d3f0bafd77abe243fea535b1b3fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/B_witch_take_damage.png"
-dest_files=["res://.godot/imported/B_witch_take_damage.png-f5aafbcdc034115825a90c81a1d04ff5.ctex"]
+source_file="res://arts/enemy/transition to charge.png"
+dest_files=["res://.godot/imported/transition to charge.png-4399d3f0bafd77abe243fea535b1b3fa.ctex"]
 
 [params]
 

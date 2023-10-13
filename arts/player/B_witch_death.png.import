@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmwdd18kco6f3"
-path="res://.godot/imported/B_witch_run.png-6e9b347621b1bbddd4f2ddb7804d12f7.ctex"
+uid="uid://dxko6rmks8r5t"
+path="res://.godot/imported/B_witch_death.png-9bb787c78d6dc489240c1f4c5e39c39f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/B_witch_run.png"
-dest_files=["res://.godot/imported/B_witch_run.png-6e9b347621b1bbddd4f2ddb7804d12f7.ctex"]
+source_file="res://arts/player/B_witch_death.png"
+dest_files=["res://.godot/imported/B_witch_death.png-9bb787c78d6dc489240c1f4c5e39c39f.ctex"]
 
 [params]
 

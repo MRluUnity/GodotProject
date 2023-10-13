@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://diou47q2x88yc"
-path="res://.godot/imported/B_witch_idle.png-edec0ad4abe0b9329bdb60af167ae902.ctex"
+uid="uid://n8r3uh2vkym8"
+path="res://.godot/imported/B_witch_charge.png-312fe2db3d4e5eff94712bcb108e2bd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/B_witch_idle.png"
-dest_files=["res://.godot/imported/B_witch_idle.png-edec0ad4abe0b9329bdb60af167ae902.ctex"]
+source_file="res://arts/player/B_witch_charge.png"
+dest_files=["res://.godot/imported/B_witch_charge.png-312fe2db3d4e5eff94712bcb108e2bd1.ctex"]
 
 [params]
 

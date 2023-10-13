@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n8r3uh2vkym8"
-path="res://.godot/imported/B_witch_charge.png-be85868ced06651b3caa53399f85b4fa.ctex"
+uid="uid://doihqhqp7fxtr"
+path="res://.godot/imported/attack.png-5adbaa2da147923775a95373f0a61ae4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/B_witch_charge.png"
-dest_files=["res://.godot/imported/B_witch_charge.png-be85868ced06651b3caa53399f85b4fa.ctex"]
+source_file="res://arts/enemy/attack.png"
+dest_files=["res://.godot/imported/attack.png-5adbaa2da147923775a95373f0a61ae4.ctex"]
 
 [params]
 

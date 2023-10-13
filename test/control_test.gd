@@ -1,7 +1,7 @@
 extends Control
 
 var preset_text = "attack"
-@export var damage : float = 10
+@export var damage : float = 101
 var input_text = ""
 var xp : float = 0
 signal hit(damage : float)
@@ -23,10 +23,15 @@ func _process(delta):
 		else:
 			print("The text doesn't match!")  
 			get_node("LineEdit").clear()
+	elif Input.is_action_just_pressed("action_exit"):
+		hide()
+		line_eidt_is_show.emit(false)
 
 func _on_enemy_dead():
 	xp += 1
 	print("Player xp is add 1")
+	hide()
+	line_eidt_is_show.emit(false)
 
 
 func _on_enemy_player_dialog() -> void:
