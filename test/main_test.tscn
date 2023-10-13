@@ -19,7 +19,6 @@ offset_top = 597.0
 offset_right = 568.0
 offset_bottom = 597.0
 size_flags_vertical = 4
-damage = 40.0
 
 [node name="Enemy_Health_Bar" parent="." instance=ExtResource("4_7186c")]
 anchors_preset = 10

@@ -1,4 +1,5 @@
 extends Area2D
+# 怪物这边的脚本，写的很粗糙，很多功能没有写，之后还需要写一个有限状态机，以及让怪物能够调用json文件中的单词能力
 
 @export var health : float = 100
 var current_health : float = 0
@@ -36,6 +37,12 @@ func _hit(damage : float):
 		enemy_health_bar_switch.emit(current_health)
 		is_dead = true
 
+func _on_control_heal(heal) -> void:
+	current_health += heal
+	enemy_health_bar_switch.emit(current_health)
+	if  current_health >= health:
+		current_health = health
+
 func animation_switch(_animation : String) -> void:
 	animation.play(_animation)
 	
@@ -63,8 +70,3 @@ func _on_body_exited(body):
 	if body.is_in_group("player"):
 		pass
 
-func _on_control_heal(heal) -> void:
-	current_health += heal
-	enemy_health_bar_switch.emit(current_health)
-	if  current_health >= health:
-		current_health = health

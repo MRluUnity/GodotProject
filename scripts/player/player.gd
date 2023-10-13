@@ -1,4 +1,6 @@
 extends CharacterBody2D
+# 在思考，玩家正常操作是否要使用简易的有限状态机or完整的有限状态机
+# 思考，玩家的动画是否需要独立成一个脚本来管理（目前感觉不太需要）
 
 @export var spped : float = 300
 var animation
@@ -30,6 +32,7 @@ func _physics_process(delta) -> void:
 		else:
 			animation_switch("idle")
 	else:
+		# 这里的坐标修改只是测试的时候临时调整的，游戏过程中不会如此，到时候使用更高明的方式进行战斗状态的编写
 		position.x = 250
 		if is_attack:
 			animation_switch("attack")
@@ -50,20 +53,13 @@ func attack_animation_exit():
 	is_attack = false
 
 func set_scale_inverse() -> void:
-	# 角色方向取反,测试了一下，修改scale的值会出现鬼畜的错误，原因未知
-	# 最后只能注入Sprite2D然后修改Sprite2D中的flip_h
-	
 	if get_movement_vector_normalized().x > 0:
-		# scale.x = 1
 		player_sprite.flip_h = false
 	elif get_movement_vector_normalized().x < 0:
-		# scale.x = -1
 		player_sprite.flip_h = true
-
 
 func _on_control_line_eidt_is_show(is_show) -> void:
 	can_move = !is_show
-
 
 func _on_control_hit(damage):
 	is_attack = true
