@@ -9,35 +9,37 @@
 
 [node name="main" type="Node2D"]
 
-[node name="World" parent="." instance=ExtResource("1_lataw")]
-scale = Vector2(10, 10)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Control" parent="." instance=ExtResource("1_drten")]
+[node name="Control" parent="CanvasLayer" instance=ExtResource("1_drten")]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 568.0
-offset_top = 597.0
-offset_right = 568.0
-offset_bottom = 597.0
+offset_left = 28.0
+offset_top = 237.0
+offset_right = 28.0
+offset_bottom = 237.0
 size_flags_vertical = 4
 
-[node name="Enemy_Health_Bar" parent="." instance=ExtResource("4_7186c")]
-anchors_preset = 10
+[node name="Enemy_Health_Bar" parent="CanvasLayer" instance=ExtResource("4_7186c")]
+anchors_preset = 1
+anchor_left = 1.0
 anchor_bottom = 0.0
-offset_left = 1080.0
-offset_right = 1080.0
+offset_left = -1080.0
+grow_horizontal = 0
 grow_vertical = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="Player_Health_Bar" parent="." instance=ExtResource("2_eh23b")]
+[node name="Player_Health_Bar" parent="CanvasLayer" instance=ExtResource("2_eh23b")]
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="World" parent="." instance=ExtResource("1_lataw")]
+scale = Vector2(10, 10)
 
 [node name="enemy" parent="." instance=ExtResource("2_8uyi8")]
 position = Vector2(800, 168)
@@ -56,12 +58,12 @@ position_smoothing_speed = 1.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
-[connection signal="heal" from="Control" to="enemy" method="_on_control_heal"]
-[connection signal="hit" from="Control" to="enemy" method="_hit"]
-[connection signal="hit" from="Control" to="Player" method="_on_control_hit"]
-[connection signal="line_eidt_is_show" from="Control" to="Player" method="_on_control_line_eidt_is_show"]
-[connection signal="dead" from="enemy" to="Control" method="_on_enemy_dead"]
-[connection signal="dead" from="enemy" to="Enemy_Health_Bar" method="_on_enemy_dead"]
-[connection signal="enemy_health_bar_switch" from="enemy" to="Enemy_Health_Bar" method="_on_enemy_enemy_health_bar_switch"]
-[connection signal="player_dialog" from="enemy" to="Control" method="_on_enemy_player_dialog"]
-[connection signal="player_dialog" from="enemy" to="Enemy_Health_Bar" method="_on_enemy_player_dialog"]
+[connection signal="heal" from="CanvasLayer/Control" to="enemy" method="_on_control_heal"]
+[connection signal="hit" from="CanvasLayer/Control" to="enemy" method="_hit"]
+[connection signal="hit" from="CanvasLayer/Control" to="Player" method="_on_control_hit"]
+[connection signal="line_eidt_is_show" from="CanvasLayer/Control" to="Player" method="_on_control_line_eidt_is_show"]
+[connection signal="dead" from="enemy" to="CanvasLayer/Control" method="_on_enemy_dead"]
+[connection signal="dead" from="enemy" to="CanvasLayer/Enemy_Health_Bar" method="_on_enemy_dead"]
+[connection signal="enemy_health_bar_switch" from="enemy" to="CanvasLayer/Enemy_Health_Bar" method="_on_enemy_enemy_health_bar_switch"]
+[connection signal="player_dialog" from="enemy" to="CanvasLayer/Control" method="_on_enemy_player_dialog"]
+[connection signal="player_dialog" from="enemy" to="CanvasLayer/Enemy_Health_Bar" method="_on_enemy_player_dialog"]
