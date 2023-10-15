@@ -1,16 +1,52 @@
 {
 	"attack_text": {
 		"name": "attack",
+		"element": "null",
 		"damage": 10,
 		"heal": 0,
 		"mana": 5,
-		"slow_time": 0
+		"slow_time": 0,
+		"shield_value": 0,
+		"buff": "null"
 	},
 	"heal_text": {
 		"name": "heal",
+		"element": "null",
+		"damage": 0,
+		"heal": 10,
+		"mana": 5,
+		"slow_time": 0,
+		"shield_value": 0,
+		"buff": "null"
+	},
+	"inverse_text": {
+		"name": "inverse",
+		"element": "null",
 		"damage": 0,
 		"heal": 0,
 		"mana": 5,
-		"slow_time": 0
-	}
+		"slow_time": 0,
+		"shield_value": 0,
+		"buff": "inverse"
+	},
+	"slow_text": {
+		"name": "heal",
+		"element": "null",
+		"damage": 0,
+		"heal": 0,
+		"mana": 5,
+		"slow_time": 3,
+		"shield_value": 0,
+		"buff": "null"
+	},
+	"defend_text": {
+		"name": "defend",
+		"element": "null",
+		"damage": 0,
+		"heal": 0,
+		"mana": 5,
+		"slow_time": 0,
+		"shield_value": 10,
+		"buff": "null"
+	},
 }
