@@ -45,6 +45,17 @@ position = Vector2(800, 168)
 [node name="Player" parent="." groups=["player"] instance=ExtResource("3_kf6vj")]
 position = Vector2(300, 160)
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(300, 160)
+scale = Vector2(0.75, 0.75)
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
 [connection signal="heal" from="Control" to="enemy" method="_on_control_heal"]
 [connection signal="hit" from="Control" to="enemy" method="_hit"]
 [connection signal="hit" from="Control" to="Player" method="_on_control_hit"]

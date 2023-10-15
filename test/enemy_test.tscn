@@ -278,7 +278,7 @@ _data = {
 }
 
 [node name="enemy" type="Area2D"]
-scale = Vector2(10, 10)
+scale = Vector2(7.5, 7.5)
 script = ExtResource("1_bybte")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

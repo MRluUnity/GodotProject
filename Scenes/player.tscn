@@ -292,6 +292,7 @@ _data = {
 radius = 35.0571
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
 up_direction = Vector2(0, 1)
 script = ExtResource("1_52wnr")
 metadata/_edit_group_ = true
