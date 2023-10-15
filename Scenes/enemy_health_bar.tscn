@@ -1,6 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://bppu8l7vav1ii"]
+[gd_scene load_steps=4 format=3 uid="uid://bppu8l7vav1ii"]
 
 [ext_resource type="Script" path="res://scripts/ui/enemy_health_bar.gd" id="1_my2nt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l3d1s"]
+bg_color = Color(0.94902, 0.356863, 0.580392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mkd0"]
+bg_color = Color(0.776471, 0, 0.301961, 1)
 
 [node name="Enemy_Health_Bar" type="Control"]
 layout_mode = 3
@@ -19,4 +25,6 @@ anchor_right = 1.0
 offset_left = -400.0
 offset_bottom = 40.0
 grow_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_l3d1s")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6mkd0")
 value = 100.0
