@@ -25,12 +25,12 @@ func _process(delta):
 	# 判断：玩家按下接受键开始检测单词的拼写，按下退出则关闭输入界面且清空输入框内容，以及重置input_text
 	# 嵌套的判断：对比玩家是否输入正确，根据输入情况来发动技能，这里之后要重写
 	if Input.is_action_just_pressed("action_accept"):
-		if input_text == text_json.item_data.attack_text["name"]:
+		if input_text == text_json.word_ability_data.attack_text["name"]:
 			get_node("LineEdit").clear()
-			hit.emit(text_json.item_data.attack_text["damage"])
-		elif input_text == text_json.item_data.heal_text["name"]:
+			hit.emit(text_json.word_ability_data.attack_text["damage"])
+		elif input_text == text_json.word_ability_data.heal_text["name"]:
 			get_node("LineEdit").clear()
-			heal.emit(text_json.item_data.heal_text["heal"])
+			heal.emit(text_json.word_ability_data.heal_text["heal"])
 		else:
 			get_node("LineEdit").clear()
 	elif Input.is_action_just_pressed("action_exit"):

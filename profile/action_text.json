@@ -1,0 +1,9 @@
+{
+	"action_up": "上",
+	"action_down": "下",
+	"action_left": "左",
+	"action_right": "右",
+	"action_accept": "接受",
+	"action_exit": "暂停",
+	"action_interact": "交互"
+}

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpnyy10i2a4ua"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8k28"]
+bg_color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_viteh"]
+bg_color = Color(0.666667, 0.666667, 0.666667, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wcla4"]
+
+[node name="InputButton" type="Button"]
+custom_minimum_size = Vector2(0, 30)
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_u8k28")
+theme_override_styles/hover = SubResource("StyleBoxFlat_viteh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_viteh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wcla4")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LabelAction" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "action name"
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="LabelInput" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "Input Key"
+vertical_alignment = 1

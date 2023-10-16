@@ -2,14 +2,20 @@ extends Node
 # 这个脚本是关于json文件读取的
 
 # 创建一个字典用来储存json文件中的数据
-var item_data = {}
+var word_ability_data = {}
+var action_text_data = {}
+var buff_data = {}
 
 # 读取的json文件路径
-var data_file_path = "res://profile/word_ability_profile.json"
+var word_ability_profile_file_path = "res://profile/word_ability_profile.json"
+var action_text_file_path = "res://profile/action_text.json"
+var buff_profile_file_path = "res://profile/buff_profile.json"
 
 func _ready() -> void:
 	# 再初始化中调用加载的方法来加载json文件
-	item_data = load_json_file(data_file_path)
+	word_ability_data = load_json_file(word_ability_profile_file_path)
+	action_text_data = load_json_file(action_text_file_path)
+	buff_data = load_json_file(buff_profile_file_path)
 
 # 加载json文件
 func load_json_file(file_path : String):
