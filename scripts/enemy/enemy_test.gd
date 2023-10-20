@@ -27,22 +27,6 @@ func _process(delta):
 	else:
 		animation_switch("idle")
 
-func _hit(damage : float):
-	is_hit = true
-	current_health -= damage
-	enemy_health_bar_switch.emit(current_health)
-	if  current_health <= 0:
-		current_health = 0
-		dead.emit()
-		enemy_health_bar_switch.emit(current_health)
-		is_dead = true
-
-func _on_control_heal(heal) -> void:
-	current_health += heal
-	enemy_health_bar_switch.emit(current_health)
-	if  current_health >= health:
-		current_health = health
-
 func animation_switch(_animation : String) -> void:
 	animation.play(_animation)
 	
@@ -61,7 +45,8 @@ func _on_body_entered(body):
 	# 当物体进入触发器时触发此函数
 	if body.is_in_group("player") && is_dead == false:
 		player_dialog.emit()
-		position.x = 800
+		position.x = 100
+
 	if body.is_in_group("attack"):
 		print("接收Player攻击")
 
@@ -70,3 +55,19 @@ func _on_body_exited(body):
 	if body.is_in_group("player"):
 		pass
 
+
+func _on_edit_heal(heal) -> void:
+	current_health += heal
+	enemy_health_bar_switch.emit(current_health)
+	if  current_health >= health:
+		current_health = health
+
+func _on_edit_hit(damage) -> void:
+	is_hit = true
+	current_health -= damage
+	enemy_health_bar_switch.emit(current_health)
+	if  current_health <= 0:
+		current_health = 0
+		dead.emit()
+		enemy_health_bar_switch.emit(current_health)
+		is_dead = true

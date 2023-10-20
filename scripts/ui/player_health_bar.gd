@@ -6,3 +6,7 @@ func _ready():
 
 func _process(delta):
 	pass
+
+
+func _on_edit_heal(damage) -> void:
+	pass # Replace with function body.

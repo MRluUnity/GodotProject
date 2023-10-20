@@ -23,3 +23,4 @@ func _on_enemy_dead():
 
 func _on_enemy_player_dialog():
 	show()
+

@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://bbext4nlbgtpu"]
+
+[ext_resource type="PackedScene" uid="uid://brm0n0do7bgx0" path="res://scenes/gui/edit.tscn" id="1_drten"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_kgtl5"]
+[ext_resource type="PackedScene" uid="uid://g3g2f3adhwq4" path="res://scenes/world.tscn" id="1_lataw"]
+[ext_resource type="PackedScene" uid="uid://bov0x7w7w8ghw" path="res://scenes/enemy.tscn" id="2_8uyi8"]
+[ext_resource type="PackedScene" uid="uid://btuybav277gxg" path="res://scenes/gui/player_health_bar.tscn" id="2_eh23b"]
+[ext_resource type="PackedScene" uid="uid://dod37ps8ek8p4" path="res://scenes/player.tscn" id="3_kf6vj"]
+[ext_resource type="PackedScene" uid="uid://bppu8l7vav1ii" path="res://scenes/gui/enemy_health_bar.tscn" id="4_7186c"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_kgtl5")
+
+[node name="CanvasManager" type="CanvasLayer" parent="."]
+
+[node name="WorldGUI" type="CanvasLayer" parent="CanvasManager"]
+
+[node name="Enemy_Health_Bar" parent="CanvasManager/WorldGUI" instance=ExtResource("4_7186c")]
+
+[node name="Player_Health_Bar" parent="CanvasManager/WorldGUI" instance=ExtResource("2_eh23b")]
+
+[node name="Edit" parent="CanvasManager/WorldGUI" instance=ExtResource("1_drten")]
+
+[node name="World" parent="." instance=ExtResource("1_lataw")]
+scale = Vector2(10, 10)
+
+[node name="enemy" parent="World" instance=ExtResource("2_8uyi8")]
+position = Vector2(80, 16.8)
+scale = Vector2(0.75, 0.75)
+
+[node name="Player" parent="World" groups=["player"] instance=ExtResource("3_kf6vj")]
+position = Vector2(30, 16)
+scale = Vector2(0.075, 0.075)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="World/Player"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="World"]
+position = Vector2(30, 16)
+scale = Vector2(0.075, 0.075)
+position_smoothing_enabled = true
+position_smoothing_speed = 1.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
+[connection signal="heal" from="CanvasManager/WorldGUI/Edit" to="World/enemy" method="_on_edit_heal"]
+[connection signal="hit" from="CanvasManager/WorldGUI/Edit" to="World/enemy" method="_on_edit_hit"]
+[connection signal="line_eidt_is_show" from="CanvasManager/WorldGUI/Edit" to="World/Player" method="_on_edit_line_eidt_is_show"]
+[connection signal="dead" from="World/enemy" to="CanvasManager/WorldGUI/Enemy_Health_Bar" method="_on_enemy_dead"]
+[connection signal="enemy_health_bar_switch" from="World/enemy" to="CanvasManager/WorldGUI/Enemy_Health_Bar" method="_on_enemy_enemy_health_bar_switch"]
+[connection signal="player_dialog" from="World/enemy" to="CanvasManager/WorldGUI/Enemy_Health_Bar" method="_on_enemy_player_dialog"]

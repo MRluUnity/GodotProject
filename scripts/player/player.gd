@@ -33,7 +33,7 @@ func _physics_process(delta) -> void:
 			animation_switch("idle")
 	else:
 		# 这里的坐标修改只是测试的时候临时调整的，游戏过程中不会如此，到时候使用更高明的方式进行战斗状态的编写
-		position.x = 250
+		position.x = 0
 		if is_attack:
 			animation_switch("attack")
 		else:
@@ -58,8 +58,9 @@ func set_scale_inverse() -> void:
 	elif get_movement_vector_normalized().x < 0:
 		player_sprite.flip_h = true
 
-func _on_control_line_eidt_is_show(is_show) -> void:
-	can_move = !is_show
-
 func _on_control_hit(damage):
 	is_attack = true
+
+
+func _on_edit_line_eidt_is_show(is_show) -> void:
+	can_move = !is_show
